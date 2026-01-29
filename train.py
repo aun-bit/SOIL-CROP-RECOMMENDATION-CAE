@@ -1,3 +1,10 @@
+"""
+train.py
+
+Trains the Convolutional Autoencoder (pretraining) and the CAE-based classifier
+on the Crop Recommendation dataset. Saves weights, history, and artifacts.
+"""
+
 import os
 import numpy as np
 from sklearn.preprocessing import StandardScaler, LabelEncoder
