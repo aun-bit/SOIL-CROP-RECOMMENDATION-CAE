@@ -134,26 +134,25 @@ Markdown
 
 ### 7.1 Installation
 
-    ```bash
     pip install -r requirements.txt
 
 Ensure `Crop_recommendation.csv` is placed under `data/soil_crop/`.
 
 ### 7.2 Training
-    ```bash
+
     python train.py
 
 ### 7.3 Evaluation
-    ```bash
+
     python evaluate.py
     python baseline_logreg.py
 
 ### 7.4 Inference
-    ```bash
+
     python inference.py --input_json sample_input.json --top_k 3
 
 ### 7.5 Visualization
-    ```bash
+
     python visualize_results.py
 
 Plots will be saved to `docs/figures/`.
