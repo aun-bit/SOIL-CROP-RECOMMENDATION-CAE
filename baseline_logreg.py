@@ -1,3 +1,10 @@
+"""
+baseline_logreg.py
+
+Implements a Logistic Regression baseline for crop recommendation on the
+standardized soil and climate features. Used for comparison with the CAE model.
+"""
+
 # baseline_logreg.py
 """
 Baseline model: LogisticRegression on raw (scaled) soil features
@@ -69,4 +76,5 @@ def main():
     print(metrics["classification_report"])
 
 if __name__ == "__main__":
+
     main()
