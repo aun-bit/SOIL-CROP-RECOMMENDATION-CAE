@@ -1,3 +1,10 @@
+"""
+visualize_results.py
+
+Generates and saves AE loss curves, classifier loss/accuracy curves,
+confusion matrix, and micro-averaged ROC/PR curves into docs/figures/.
+"""
+
 import os
 import numpy as np
 import matplotlib.pyplot as plt
