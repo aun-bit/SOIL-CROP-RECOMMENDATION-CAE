@@ -1,3 +1,10 @@
+"""
+evaluate.py
+
+Evaluates the trained CAE-based classifier on the test split and prints
+accuracy, precision, recall, F1-score and the full classification report.
+"""
+
 import os
 import numpy as np
 import tensorflow as tf
