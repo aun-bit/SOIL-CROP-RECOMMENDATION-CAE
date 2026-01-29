@@ -20,4 +20,10 @@ This project predicts the most suitable crop for a given soil–climate profile 
    python baseline_logreg.py
    python inference.py --input_json sample_input.json --top_k 3
 
+```markdown
+## Results Summary
 
+| Model                          | Accuracy | Precision (w) | Recall (w) | F1 (w)  |
+|--------------------------------|----------|---------------|------------|---------|
+| Logistic Regression (baseline) | 97.58%   | 97.64%        | 97.58%     | 97.55%  |
+| CAE-based classifier (main)    | 99.09%   | 99.15%        | 99.09%     | 99.09%  |
