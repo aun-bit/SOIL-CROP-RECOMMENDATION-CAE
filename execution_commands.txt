@@ -1,0 +1,18 @@
+python --version       #Optional
+
+python -m venv venv    #only once per machine
+
+
+.\venv\Scripts\python.exe -m pip install --upgrade pip           #only once per machine
+.\venv\Scripts\python.exe -m pip install -r requirements.txt     #only once per machine
+
+
+
+
+ #Run every time you want to use the project
+
+.\venv\Scripts\python.exe train.py                                                   # train CAE + classifier
+.\venv\Scripts\python.exe evaluate.py                                                # test metrics
+.\venv\Scripts\python.exe baseline_logreg.py                                         # baseline results
+.\venv\Scripts\python.exe inference.py --input_json sample_input.json --top_k 3
+.\venv\Scripts\python.exe visualize_results.py                                      
