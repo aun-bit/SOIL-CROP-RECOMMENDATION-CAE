@@ -27,3 +27,13 @@ This project predicts the most suitable crop for a given soil–climate profile 
 |--------------------------------|----------|---------------|------------|---------|
 | Logistic Regression (baseline) | 97.58%   | 97.64%        | 97.58%     | 97.55%  |
 | CAE-based classifier (main)    | 99.09%   | 99.15%        | 99.09%     | 99.09%  |
+
+## Project Structure
+
+```text
+SOIL-CROP-RECOMMENDATION-CAE/
+├── data/soil_crop/
+├── docs/figures/
+├── utils/
+├── train.py, evaluate.py, baseline_logreg.py, inference.py
+└── ...
