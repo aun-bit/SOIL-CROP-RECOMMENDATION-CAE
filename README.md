@@ -1,39 +1,39 @@
 # Soil–Crop Recommendation System using Convolutional Autoencoder (CAE)
 
-This project predicts the most suitable crop for a given soil–climate profile using a CAE-based classifier and a Logistic Regression baseline on the Kaggle Crop Recommendation dataset.
-## How to Run (Local)
+## Abstract / Overview
 
-1. Create a Python venv and install:
-     ```bash
-   pip install -r requirements.txt
-   
-2. Train CAE model:
-     ```bash
-    python train.py
-    
-3. Evaluate:
-    ```bash
-   python evaluate.py
-   
-4. Baseline and inference:
-    ```bash
-   python baseline_logreg.py
-   python inference.py --input_json sample_input.json --top_k 3
+This project builds a **soil–crop recommendation system** that predicts the most suitable crop based on soil nutrients and environmental conditions. We use a **Convolutional Autoencoder (CAE)–based classifier** as the main model and a **Logistic Regression** baseline for comparison. Models are trained on the Kaggle **Crop Recommendation Dataset** and evaluated using accuracy, precision, recall, and F1-score. The work supports **SDG 2 (Zero Hunger)** and **SDG 12 (Responsible Consumption and Production)** by enabling data‑driven, sustainable crop planning.
 
-```markdown
-## Results Summary
+---
 
-| Model                          | Accuracy | Precision (w) | Recall (w) | F1 (w)  |
-|--------------------------------|----------|---------------|------------|---------|
-| Logistic Regression (baseline) | 97.58%   | 97.64%        | 97.58%     | 97.55%  |
-| CAE-based classifier (main)    | 99.09%   | 99.15%        | 99.09%     | 99.09%  |
+## 1. Introduction
 
-## Project Structure
+Crop choice is often based on experience or generic advisories, which may not fully reflect **field‑specific soil and climate conditions**. This can lead to suboptimal yields, wasted fertilizers and water, and economic losses. With soil testing and meteorological data becoming widely available, there is an opportunity to use **machine learning** for objective crop recommendation.
 
-```text
-SOIL-CROP-RECOMMENDATION-CAE/
-├── data/soil_crop/
-├── docs/figures/
-├── utils/
-├── train.py, evaluate.py, baseline_logreg.py, inference.py
-└── ...
+**Objectives:**
+
+1. Design a **CAE‑based deep learning model** for soil–crop recommendation.
+2. Implement a **Logistic Regression baseline** on standardized raw features.
+3. Evaluate both models using accuracy, precision, recall, and F1-score.
+4. Provide a simple **inference pipeline** to recommend crops for new soil inputs.
+5. Relate the solution to **SDG 2** and **SDG 12**.
+
+---
+
+## 2. Dataset
+
+- **Source:** Kaggle – Crop Recommendation Dataset (`Crop_recommendation.csv`).
+- **Path:** `data/soil_crop/Crop_recommendation.csv`.
+- **Size:** ~2200 samples, **22 crop classes**.
+- **Features (7):**  
+  `N, P, K, temperature, humidity, ph, rainfall`
+- **Label:** `label` – crop name (22 classes).
+
+**Preprocessing (implemented in `utils/data_loader.py`):**
+
+- Stratified **train/validation/test split** (~70%/15%/15%).
+- **Standardization** of features using `StandardScaler`.
+- **Label encoding** using `LabelEncoder`.
+- For CAE, features reshaped from `(7,)` to `(7, 1)` for Conv1D input.
+
+---
