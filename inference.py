@@ -1,3 +1,10 @@
+"""
+inference.py
+
+Loads trained CAE-based classifier and artifacts, then recommends crops for a
+single soil sample defined in a JSON file (e.g., sample_input.json).
+"""
+
 import json
 import argparse
 import numpy as np
