@@ -1,3 +1,10 @@
+"""
+data_loader.py
+
+Handles loading Crop_recommendation.csv, creating stratified train/val/test
+splits, and providing helper functions to load each split.
+"""
+
 import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
